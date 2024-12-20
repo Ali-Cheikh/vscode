@@ -224,3 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // It calculates the number of leading spaces on the current line to display the spaces count.
     // Event listeners: We listen for input, click, and keyup events on the textarea to ensure the information is updated whenever the user types, clicks, or moves the cursor.
 });
+document.getElementById('chatbase-message-bubbles').setAttribute('style', 'bottom: 1.5rem !important');
+document.getElementById('chatbase-message-bubbles').style.setProperty('bottom', '50px', 'important');
+// Select the div with the specific classes
+const div = document.querySelector('.relative.flex.flex-1.basis-full.flex-col.overflow-y-hidden.scroll-smooth.shadow-inner');
+
+// Change its background color to black
+div.style.backgroundColor = 'black';
