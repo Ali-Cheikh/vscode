@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInput = document.getElementById('file-input');
     const terminalOutput = document.querySelector('#terminal-output');
     const fileContents = {
-        "index.html": "<!-- This is index.html -->\n<h1>Try the Playground <br> and ask the AI anything</h1>",
+        "index.html": "<!-- This is index.html -->\n<h1>Try the Playground <br>And ask the AI anything</h1>",
         "style.css": "/* This is style.css */\nbody { background-color:rgb(186, 248, 224); }",
         "script.js": "// This is script.js\nconsole.log('Hello, JavaScript!');"
     };
