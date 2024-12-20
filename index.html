@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools-like Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="vscode-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <span class="menu-item" data-panel="file">File</span>
+            <span class="menu-item" data-panel="edit">Edit</span>
+            <span class="menu-item" data-panel="selection">Selection</span>
+            <span class="menu-item" data-panel="view">View</span>
+            <span class="menu-item" data-panel="go">Go</span>
+            <span class="menu-item" id="run-button">Run</span>
+            <span class="menu-item" data-panel="terminal">Terminal</span>
+            <span class="menu-item" data-panel="help">Help</span>
+        </div>
+        <!-- Settings Modal -->
+        <div id="settings-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);background-color: #333; color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.5);z-index: 1000;">
+            <h2>Page Settings</h2>
+            <label for="theme-select">Select Theme:</label>
+            <select id="theme-select">
+                <option value="dark">Dark</option>
+                <option value="light" disabled>Light</option>
+            </select>
+            <br><br>
+            <button onclick="closeSettings()" style="padding: 5px 10px; cursor: pointer;">Close</button>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="icon active" data-section="explorer" id="open-file">📂</div>
+            <div class="icon" data-section="search"><a href="chatgpt.com"></a>🔍</div>
+            <div class="icon" data-section="source-control" onclick="window.location.reload();"><img src="https://img.icons8.com/win10/512/FFFFFF/refresh.png" alt=""></div>
+            <div class="icon" data-section="settings"><img src="https://cdn.discordapp.com/attachments/1109085677305479188/1318639319333863535/image.png?ex=67630e10&is=6761bc90&hm=f4c3d2751a768dec9bf542ce5f9483a566b80d846e9174e4971782b08f9fdda4&" alt=""></div>
+        </div>
+        <!-- Hidden File Input -->
+        <input type="file" id="file-input" accept=".txt,.html" style="display: none;">
+
+        <!-- Editor Area -->
+        <div class="editor">
+            <div class="tabs">
+                <div class="tab active" id="index-html" data-file="index.html">index.html</div>
+                <div class="tab" id="style-css" data-file="style.css">style.css</div>
+                <div class="tab" id="script-js" data-file="script.js">script.js</div>
+            </div>
+            <textarea id="code-content"></textarea>
+            <iframe id="iframe-output"></iframe>
+        </div>
+
+        <!-- Iframe for live preview -->
+        <iframe id="iframe-output" style="width: 100%; ; height: 100%;"></iframe>
+
+        <div class="sticky-icons">
+            <h2 style="cursor: pointer;">🌐</h2>
+            <h2 id="open-settings" style="cursor: pointer;">⚙️</h2>
+        </div>
+        <!-- Terminal Output -->
+        <div id="terminal-output" style="min-height: 70px !important;background: black; color: rgb(123, 255, 0) !important; padding: 10px;">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <span>Status: Ready</span>
+        <span id="cursor-position">Ln 1, Col 1</span>
+        <span id="spaces-count">Spaces: 4</span>
+        <span>UTF-8</span>
+        <span>CRLF</span>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "6fjWFR4n2CmAbgILC8rZh",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="6fjWFR4n2CmAbgILC8rZh" domain="www.chatbase.co" defer>
+    </script>
+</body>
+
+</html>
